@@ -1,0 +1,81 @@
+import React, { useState } from "react";
+// import { Card } from "./Components/Card";
+// import { CardSecond } from "./Components/CardSecond";
+function App() {
+  //  const [banned,setBanned] =  useState(false);
+  // const [val,setVal] =  useState(12);
+  // const [val, setval] = useState({ name: "Akash", isBanned: true });
+  // const [val, setVal] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const [val, setVal] = useState([
+    { name: "aarav", age: 32 },
+    { name: "shivam", age: 22 },
+    { name: "meena", age: 35 },
+  ]);
+
+  return (
+    // <div className="w-full h-screen px-4 py-4 bg-blue-300 ">
+    //   <h1>{banned.toString()}</h1>
+    //   <button onClick={()=>setBanned(!banned)} className="bg-red-600 text-white px-2 py-2 rounded text-sm">click me</button>
+    // </div>
+
+    // <div className="w-full h-screen px-4 py-4 bg-blue-300 ">
+    //    <h1>{val}</h1>
+    //    <button onClick={()=>setVal(prev=>prev+12)} className="bg-red-600 text-white px-2 py-2 rounded text-sm">click me</button>
+    //  </div>
+
+    //   <div className="p-4">
+    //     <h1>name : {val.name}</h1>
+    //     <h2>isBanned : {val.isBanned.toString()}</h2>
+    //     <button
+    //       onClick={() => setval({ ...val, isBanned: !val.isBanned })}
+    //       className={`px-2 py-1 ${val.isBanned ? "bg-blue-500" : "bg-red-500"} rounded-full text-zinc-100 text-sm`}
+    //     >
+    //       i am button
+    //     </button>
+    //   </div>
+
+    // remove item  in arrray
+    // <div className="p-4">
+    //   {val.map((item) => (
+    //     <h1>{item}</h1>
+    //   ))}
+    //   <button
+    //     onClick={() =>
+    //       setVal(() => val.filter((item, index) => index != val.length - 1))
+
+    //     }
+    //     className="px-2 py-1 bg-red-400 rounded-full text-sm text-white"
+    //   >
+    //     Remove item
+    //   </button>
+    // </div>
+    // //
+
+    // remove specific array
+    // <div className="p-10">
+    //   {val.map(item => <h1>{item}</h1>)}
+    //   <button onClick={()=>setVal(()=>val.filter(item=> item%2 !==0 ))} className="px-2 py-1 bg-blue-600 text-sm text-white rounded-full mt-5">Remove</button>
+    //   </div>
+
+    // add item in array
+    // <div className="p-10">
+    //    {val.map(item => <h1>{item}</h1>)}
+    //    <button onClick={()=>setVal([...val , 10])} className="px-2 py-1 bg-blue-600 text-sm text-white rounded-full mt-5">Remove</button>
+    //    </div>
+
+    // change array object value
+    <div className="p-5">
+      {val.map((item) => (
+        <>
+        <h1>{item.name}</h1>
+        <h2>{item.age}</h2>
+        </>
+      ))}
+      
+      <button onClick={()=>setVal(()=> val.map(item=> item.name === "shivam" ? ({name:"shivam",age:26}) : item))} className="px-2 py-1 text-white bg-red-400 rounded-full">
+        click me
+      </button>
+    </div>
+  );
+}
+export default App;
